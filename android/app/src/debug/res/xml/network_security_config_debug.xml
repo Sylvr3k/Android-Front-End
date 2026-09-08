@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Debug-build only: permits plain HTTP so the app can reach a local
+  `php artisan serve` instance (via the 10.0.2.2 emulator alias or your
+  machine's LAN IP for a physical device) without needing a certificate.
+  This file lives under src/debug/ and is never merged into a release
+  build — release builds must use an HTTPS API_BASE_URL.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>
